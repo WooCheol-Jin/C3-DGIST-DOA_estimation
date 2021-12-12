@@ -10,6 +10,9 @@ Platform = 'B210'; % USRP N210
 % MasterClockRate = 30e6;  %Hz
 % Fs = 10e6; % Sample rate
 
+
+testing 
+
  MasterClockRate = 30e6;  %Hz
  Fs = 10e6; % Sample rate
 
