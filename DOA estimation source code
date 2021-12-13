@@ -63,20 +63,9 @@ classdef RFScanner_1213 < matlab.apps.AppBase
                     SelAnt2 = (burstCaptures(:,2,FrameIdx));
                     FreqAnt1=fft(SelAnt1);
                     
-                    n_ind = 1:length(SelAnt1);
-                    for k = 1:length(SelAnt1)
-                        ex = exp(-j*2*pi*(k-1)*(n_ind-1)/length(SelAnt1));
-                        FreqAnt1(k) = ex*SelAnt1;
-                    end
                     
+                    FreqAnt1 = fft(SelAnt1);
                     FreqAnt2=fft(SelAnt2);
-                    n_ind = 1:length(SelAnt2);
-                    for k = 1:length(SelAnt2)
-                        ex = exp(-j*2*pi*(k-1)*(n_ind-1)/length(SelAnt2));
-                        FreqAnt2(k) = ex*SelAnt2;
-                    end
-                                        
-                    
                     
                     ConjMult_Ant2Ant1=FreqAnt1.*conj(FreqAnt2);
                     [Pos1 Pos2]=find(abs(ConjMult_Ant2Ant1)>DetTH);
@@ -106,27 +95,29 @@ classdef RFScanner_1213 < matlab.apps.AppBase
                     end
                     
                     
-                end
+                  end
                 
             end
             
-            
-            
-            
-            
+        end
+        
+        
+        
+        
+        
         end
 
         % Value changed function: FileSelectButton
         function FileSelectButtonValueChanged(app, event)
-            value = app.FileSelectButton.Value;
-            [filename, pathname] = uigetfile('*.mat', 'Pick a TX Calibration MAT File');
-            app.FileName=filename;
-            app.PathName=pathname;
-            app.FileSelection=1;
-            app.FileNameEditField.Value=filename;
-            app.FileNameEditField_2.Value=pathname;
-            
-            
+    value = app.FileSelectButton.Value;
+    [filename, pathname] = uigetfile('*.mat', 'Pick a TX Calibration MAT File');
+    app.FileName=filename;
+    app.PathName=pathname;
+    app.FileSelection=1;
+    app.FileNameEditField.Value=filename;
+    app.FileNameEditField_2.Value=pathname;
+    
+    
         end
 
         % Changes arrangement of the app based on UIFigure width
