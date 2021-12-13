@@ -62,7 +62,22 @@ classdef RFScanner_1213 < matlab.apps.AppBase
                     SelAnt1 = (burstCaptures(:,1,FrameIdx));
                     SelAnt2 = (burstCaptures(:,2,FrameIdx));
                     FreqAnt1=fft(SelAnt1);
+                    
+                    n_ind = 1:length(SelAnt1);
+                    for k = 1:length(SelAnt1)
+                        ex = exp(-j*2*pi*(k-1)*(n_ind-1)/length(SelAnt1));
+                        FreqAnt1(k) = ex*SelAnt1;
+                    end
+                    
                     FreqAnt2=fft(SelAnt2);
+                    n_ind = 1:length(SelAnt2);
+                    for k = 1:length(SelAnt2)
+                        ex = exp(-j*2*pi*(k-1)*(n_ind-1)/length(SelAnt2));
+                        FreqAnt2(k) = ex*SelAnt2;
+                    end
+                                        
+                    
+                    
                     ConjMult_Ant2Ant1=FreqAnt1.*conj(FreqAnt2);
                     [Pos1 Pos2]=find(abs(ConjMult_Ant2Ant1)>DetTH);
                     SelBigVal=ConjMult_Ant2Ant1(Pos1);
@@ -82,15 +97,15 @@ classdef RFScanner_1213 < matlab.apps.AppBase
                         
                         subplot(2,2,4);
                         plot(real(SelAnt1)); hold on; plot(real(SelAnt2), 'r'); legend('Time of Real Ant1','Time of Real Ant2'); hold off;
-
+                        
                     end
                     
                     if Avg_ResultOn
                         figure(200); title('Averaged Angle of Frame')
                         hold on; plot(FrameIdx, MeanAngle, 'ro'); axis([0 FrameEnd+1 -180 180]);
                     end
-                  
-                                        
+                    
+                    
                 end
                 
             end
