@@ -71,23 +71,18 @@ classdef RFScanner_1213 < matlab.apps.AppBase
                     
                     if Indi_ResultOn
                         figure(FrameIdx);
-                        subplot(3,2,1);
+                        subplot(2,2,1);
                         plot(abs(FreqAnt1)); legend('Freq of Ant1');
                         
-                        subplot(3,2,2);
+                        subplot(2,2,2);
                         plot(abs(FreqAnt2), 'r'); legend('Freq of Ant2');
                         
-                        subplot(3,2,3);
+                        subplot(2,2,3);
                         plot(angle(ConjMult_Ant2Ant1)/pi*180); legend('Phase Difference of All in Freq');
                         
-                        subplot(3,2,4);
-                        plot(angle(SelBigVal)/pi*180); legend('Phase Difference of Detected in Freq');
-                        
-                        subplot(3,2,5);
+                        subplot(2,2,4);
                         plot(real(SelAnt1)); hold on; plot(real(SelAnt2), 'r'); legend('Time of Real Ant1','Time of Real Ant2'); hold off;
-                        
-                        subplot(3,2,6);
-                        plot(Pos1); legend('Detected Idx Pattern');
+
                     end
                     
                     if Avg_ResultOn
