@@ -1,10 +1,11 @@
 # C3-DGIST-DOA_estimation
-Direction of arrival (DOA) of RF signal estimation program for detecting malicious jamming system.
+The direction of arrival (DOA) of RF signal estimation program for detecting malicious jamming system
 
-This program shows the phase difference of recevied signal between two antenna.
+This program shows the phase difference of the received signal between two antennas.
 
-1) RFScanner_program: exe file for DOA estimation. This program is design based on matlab. In order to run this file, matlab must be installed.
+1) Measured data: this file is the measured two-channel radio frequency data. (It is measured with 2 antenna.) 
 
-2) Measured data: this file is measured Radio frequency signal with 2 antenna. 
+2) RFScanner_program: EXE file for DOA estimation. This program is designed based on MATLAB. To run this file, MATLAB must be installed.
+                      By using this program, you can analyze the measured data. 
 
-3) DOA estimation source code: this file shows the source code of RF scanner_program file.
+3) DOA estimation source code: this file shows the source code of the RF scanner_program file.
