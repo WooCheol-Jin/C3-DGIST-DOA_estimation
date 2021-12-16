@@ -25,7 +25,6 @@ classdef RFScanner_1213 < matlab.apps.AppBase
     properties (Access = private)
         onePanelWidth = 576;
     end
-
     
     properties (Access = public)
         FileSelection=0;
