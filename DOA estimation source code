@@ -62,7 +62,6 @@ classdef RFScanner_1213 < matlab.apps.AppBase
                     SelAnt2 = (burstCaptures(:,2,FrameIdx));
                     FreqAnt1=fft(SelAnt1);
                     
-                    
                     FreqAnt1 = fft(SelAnt1);
                     FreqAnt2=fft(SelAnt2);
                     
