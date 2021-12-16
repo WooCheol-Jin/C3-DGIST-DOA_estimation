@@ -42,6 +42,8 @@ classdef RFScanner_1213 < matlab.apps.AppBase
         function RunButtonValueChanged(app, event)
             value = app.RunButton.Value;
             
+            
+            
             % Variable Initialization
             FrameStart=app.FrameStartIdxEditField.Value;
             FrameEnd=app.FrameEndIdxEditField.Value;
