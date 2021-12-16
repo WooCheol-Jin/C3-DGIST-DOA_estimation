@@ -48,7 +48,9 @@ classdef RFScanner_1213 < matlab.apps.AppBase
             FrameStart=app.FrameStartIdxEditField.Value;
             FrameEnd=app.FrameEndIdxEditField.Value;
             DetTH=app.DetTHEditField.Value;
+            
             Indi_ResultOn=app.IndividualFrameResultCheckBox.Value;
+            
             Avg_ResultOn=app.AveragedFrameResultCheckBox.Value;
             
             
