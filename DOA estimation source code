@@ -163,6 +163,7 @@ classdef RFScanner_1213 < matlab.apps.AppBase
             app.GridLayout.Padding = [0 0 0 0];
             app.GridLayout.Scrollable = 'on';
 
+
             % Create LeftPanel
             app.LeftPanel = uipanel(app.GridLayout);
             app.LeftPanel.Layout.Row = 1;
